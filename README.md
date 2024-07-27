@@ -26,7 +26,7 @@ Users should be able to:
 ### Screenshot
 
 Design desctop preview for the OPPO Enco Buds2
-![Design desctop preview for the OPPO Buds layout solution](./img/desctop-image.jpg)
+![Design desctop preview for the OPPO Buds layout solution](./img/desctop-image.png)
 
 ### Links
 
