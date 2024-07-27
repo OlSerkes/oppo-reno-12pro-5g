@@ -1,0 +1,1493 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap')
+
+.bc-description__content p:first-letter
+   padding-left: 0 !important
+
+$bp-mobile: 479.98px
+$bp-tablet: 767.98px
+$bp-hd-desktop: 1024px
+$maxWidthContainer: 1023
+
+@mixin adaptiv-value($property, $startSize, $minSize)
+   $addSize: $startSize - $minSize
+   #{$property}: $startSize + px
+   @media (max-width: #{$maxWidthContainer + px})
+      #{$property}: calc(#{$minSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidthContainer - 320}))
+
+#rkt-oppoReno12pro
+   font-family: 'Roboto', sans-serif
+   width: 100%
+   height: auto
+   position: relative
+   overflow: hidden
+   background: #fff
+   h2, h3, h4, h5, h6, p
+      margin: 0
+      padding: 0
+      line-height: 1.2
+      text-align: left
+      text-transform: none
+   ul
+      margin: 0
+      padding: 0
+      list-style-type: none
+   img
+      display: block
+      max-width: 100%
+      opacity: 1
+      margin: 0
+      &:hover
+         opacity: 1
+   h2
+      @include adaptiv-value("font-size", 40, 24)
+      font-weight: 900
+      text-align: center
+      margin: 10px 0
+   h3
+      @include adaptiv-value("font-size", 28, 20)
+      font-weight: 700
+      text-align: center
+      margin: 0 0 10px
+   h4
+      @include adaptiv-value("font-size", 20, 18)
+      font-weight: 700
+      margin: 0 0 10px
+   p
+      @include adaptiv-value("font-size", 18, 16)
+      font-weight: 400
+      text-align: center
+      &::first-letter
+         padding-left: 0
+   ul
+      margin-left: 25px
+      li
+         @include adaptiv-value("font-size", 18, 16)
+         margin-bottom: 10px
+
+#rkt-oppoReno12pro .bc-description__content p
+   margin-bottom: 0
+
+#rkt-oppoReno12pro .bc-description__content h3
+   text-align: left
+
+@mixin fonts($fontSize, $lineHeight)
+   font:
+      size: $fontSize
+   line:
+      height: $lineHeight
+
+@mixin flex-box($justifyContent, $alignItems)
+   display: flex
+   justify-content: $justifyContent
+   align-items: $alignItems
+
+@mixin bg-image($url)
+   background:
+      image: $url
+   background:
+      repeat: no-repeat
+   background:
+      position: top center
+   background:
+      size: cover
+
+@mixin position($position, $zIndex)
+   position: $position
+   z-index: $zIndex
+
+@mixin adaptive-size($property, $minSize, $maxSize, $maxWidth)
+   $size: calc( #{$minSize}px + ($maxSize - $minSize) * ((100vw - 320px)/($maxWidth - 320)))
+   #{$property}: $size
+
+%flex-img
+   position: relative
+   z-index: 5
+   padding-bottom: 58%
+   img
+      width: 100%
+      height: 100%
+      position: absolute
+      z-index: 6
+      object-fit: cover
+      top: 0
+      left: 0
+
+//==============================================================================================================================
+
+#rkt-oppoReno12pro .rkt-oppoReno12pro
+   &__container
+      box-sizing: border-box
+      max-width: 1006px
+      overflow: hidden
+      padding: 0 10px
+      margin: 0 auto
+   &__top
+      margin-bottom: 20px
+   &__bg
+      background-color: #f6f6f6
+   &__img
+      img
+         @include adaptiv-value("border-radius", 25, 10)
+   &__slider
+      margin-bottom: 20px
+      overflow: hidden
+
+#rkt-oppoReno12pro .top-oppoReno12pro
+   &__inner
+      @include position(relative, 5)
+      margin-top: 20px
+   &__text
+      @include position(absolute, 6)
+      top: 0
+      left: 50%
+      margin-right: -50%
+      transform: translateX(-50%)
+      p
+         span
+            background: #000
+            color: #fff
+            padding: 6px 11px
+            border-radius: 12px
+            @include adaptiv-value("font-size", 18, 14)
+         &:nth-of-type(2)
+            font-weight: 600
+
+#rkt-oppoReno12pro .oppoReno12pro-spec
+   &__inner
+      padding: 15px 10px
+   &__item
+      @include position(relative, 5)
+      margin-bottom: 13px
+      &:last-child
+         margin-bottom: 0
+   &__text
+      @include position(absolute, 6)
+      left: 10px
+      right: 10px
+      bottom: 10px
+      background-color: #fff
+      padding: 12px 10px
+      @include adaptiv-value("border-radius", 20, 10)
+
+#rkt-oppoReno12pro .oppoReno12pro-ai-slider
+   &__inner
+      @include adaptiv-value("border-top-left-radius", 40, 10)
+      @include adaptiv-value("border-top-right-radius", 40, 10)
+      background-color: #fff
+   &__title
+      padding: 10px 0
+   &__swiper
+      width: 95%
+      margin: 0 auto
+   &__wrapper
+      padding-bottom: 40px
+   &__slide
+      background-color: #f6f6f6
+      @include adaptiv-value("border-radius", 20, 10)
+      &:nth-child(-n+3)
+         img
+            max-height: 210px
+   &__card
+      @include flex-box(space-between, center)
+      flex-direction: column
+      padding: 15px 10px
+      min-height: 670px
+   &__text
+      h3
+         text-align: left
+      p
+         margin-bottom: 10px
+         text-align: left
+   &__item
+      @include position(relative, 5)
+      margin-bottom: 10px
+   &__item-img
+      img
+         @include adaptiv-value("border-radius", 20, 10)
+         margin: 0 auto
+   &__item-text
+      @include position(absolute, 6)
+      bottom: 10px
+      left: 50%
+      transform: translateX(-50%)
+      background-color: #fff
+      padding: 5px 7px
+      @include adaptiv-value("border-radius", 17, 7)
+      p
+         line-height: 1
+
+#rkt-oppoReno12pro .swiper-button-next
+   top: 100%
+   right: 20px
+   border-radius: 50%
+   width: 20px
+   height: 20px
+   background-color: #dcdcdc
+   &::after
+      content: ''
+      @include bg-image($url: url('../img/next.png'))
+      width: 7px
+      height: 16px
+
+#rkt-oppoReno12pro .swiper-button-prev
+   top: 100%
+   left: 75%
+   border-radius: 50%
+   width: 20px
+   height: 20px
+   background-color: #dcdcdc
+   &::after
+      content: ''
+      @include bg-image($url: url('../img/prev.png'))
+      width: 7px
+      height: 16px
+
+#rkt-oppoReno12pro .swiper-scrollbar
+   width: 60%
+   margin-left: 15px
+
+#rkt-oppoReno12pro .row-rkt-oppoReno12pro
+   &__text
+      padding: 10px
+      h3, p
+         text-align: left
+      p
+         margin-bottom: 10px
+   &__accordion
+      margin: 0 10px 10px
+   &__image
+      img
+         margin: 0 auto
+
+#rkt-oppoReno12pro .accordion-oppoReno12pro
+   &__title
+      padding: 20px 45px 20px 10px
+      transition: .5s
+      @include position($position: relative, $zIndex: 5)
+      background-color: #ebebeb
+      p
+         margin-bottom: 0
+      &:nth-of-type(1)
+         border-top-left-radius: 8px
+         border-top-right-radius: 8px
+      &_br
+         border-bottom-left-radius: 8px
+         border-bottom-right-radius: 8px
+      &::before
+         content: ""
+         @include position($position: absolute, $zIndex: 6)
+         @include bg-image(url("../img/arrow.svg"))
+         width: 8px
+         height: 14px
+         top: 50%
+         right: 15px
+         transform: translateY(-50%)
+         cursor: pointer
+         transition: .5s
+      &.active
+         background-color: #dcdcdc
+         &::before
+            right: 25px
+            transform: rotate(90deg) translate(-50%, -50%)
+      &_br.active
+         border-bottom-left-radius: 0
+         border-bottom-right-radius: 0
+   &__panel
+      background-color: #dcdcdc
+      padding: 0 10px
+      max-height: 0
+      overflow: hidden
+      transition: max-height 0.5s ease-out
+      p
+         @include adaptiv-value("font-size", 18, 16)
+         padding-bottom: 32px
+         text-align: left
+      &_br
+         border-bottom-left-radius: 8px
+         border-bottom-right-radius: 8px
+
+#rkt-oppoReno12pro .oppoReno12pro-beaconLink
+   &__inner
+      margin-bottom: 20px
+   &__image
+      padding: 10px 25px
+      background-color: #dcdcdc
+
+#rkt-oppoReno12pro .oppoReno12pro-vids-slider
+   &__swiper
+      width: 95%
+      margin: 0 auto
+   &__wrapper
+      padding-bottom: 40px
+      margin-bottom: 20px
+   &__slide
+      background-color: #f6f6f6
+      @include adaptiv-value("border-radius", 20, 10)
+   &__card
+      @include flex-box(space-between, center)
+      flex-direction: column
+      padding: 15px 10px 0
+      min-height: 660px
+   &__text
+      h3
+         text-align: left
+      p
+         margin-bottom: 10px
+         text-align: left
+
+#rkt-oppoReno12pro .oppoReno12pro-design
+   &__bg
+      background: linear-gradient(335deg, #c0aada, #e1e5ee)
+   &__inner
+      margin-bottom: 15px
+   &__text
+      padding: 15px 5px
+      h2
+         color: #fff
+
+#rkt-oppoReno12pro .oppoReno12pro-3dDesign
+   &__inner
+      @include position(relative, 6)
+      margin-bottom: 15px
+   &__text
+      @include position(absolute, 7)
+      padding: 0 15px
+      top: 0
+      left: 0
+      right: 0
+      p
+         text-align: left
+         span
+            display: inline-block
+            padding: 15px 0px 0px
+            color: rgba(250, 250, 250, 0.55)
+      h3, p
+         color: #fff
+         text-align: left
+      h3
+         margin: 10px 0
+
+#rkt-oppoReno12pro .oppoReno12pro-comfortDesign
+   &__inner
+      @include position(relative, 6)
+      padding-bottom: 45px
+      background: #000
+      @include adaptiv-value("border-radius", 25, 10)
+      margin-bottom: 15px
+   &__item
+      @include position(absolute, 7)
+      padding: 0 15px
+      top: 0
+      left: 0
+      right: 0
+      height: 100%
+      display: flex
+      justify-content: space-between
+      flex-direction: column
+      p
+         text-align: left
+         span
+            display: inline-block
+            padding: 15px 0px 0px
+            color: rgba(250, 250, 250, 0.55)
+      h3, p
+         color: #fff
+         text-align: left
+      h3
+         margin: 10px 0
+   &__text
+      margin-bottom: 10px
+   &__columns
+      display: grid
+      grid-template-columns: repeat(2, 1fr)
+      gap: 5px
+      margin-bottom: 10px
+   &__col
+      padding: 7px
+      background-color: #fff
+      border-radius: 7px
+      p
+         color: rgba(0, 0, 0, 0.95)
+         @include adaptiv-value("font-size", 18, 12)
+         margin-bottom: 5px
+   &__col-title
+      p
+         max-width: 120px
+         font-weight: 700
+   &__col-text
+      background-color: #f0f0f0
+      padding: 7px
+      border-radius: 7px
+      margin-bottom: 5px
+      p
+         margin-bottom: 0
+         span
+            color: rgba(0, 0, 0, 0.55)
+            padding-top: 5px
+
+#rkt-oppoReno12pro .oppoReno12pro-colors-slider
+   &__carousel
+      @include adaptiv-value("border-radius", 25, 10)
+      background: #000
+
+#rkt-oppoReno12pro .right-oppoReno12pro-colors-slider
+   &__image
+      img
+         @include adaptiv-value("border-top-left-radius", 25, 10)
+         @include adaptiv-value("border-top-right-radius", 25, 10)
+
+#rkt-oppoReno12pro .left-oppoReno12pro-colors-slider
+   &__slide
+      padding-bottom: 60px
+   &__item
+      padding: 15px 10px
+      margin-bottom: 15px
+      h3, p
+         color: #fff
+         text-align: left
+      h3
+         margin: 10px 0
+      p
+         margin-bottom: 10px
+      img
+         margin-bottom: 10px
+
+#rkt-oppoReno12pro .left-oppoReno12pro-colors-slider-pagination
+   top: auto
+   bottom: 20px
+
+#rkt-oppoReno12pro .left-oppoReno12pro-colors-slider-pagination .swiper-pagination-bullet
+   background: none
+   margin: 25px 20px 25px 0
+   @include position($position: relative, $zIndex: 6)
+   width: 30px
+   height: 30px
+   opacity: 1
+   &:last-child
+      margin-right: 0
+   &::after
+      content: ""
+      @include position($position: absolute, $zIndex: 7)
+      top: 0
+      left: 0
+      width: 30px
+      height: 30px
+      border: none
+      border-radius: 50px
+   &::before
+      @include position($position: absolute, $zIndex: 7)
+      left: 0
+      right: 0
+      color: rgba(250, 250, 250, 0.55)
+      @include fonts($fontSize: 12px, $lineHeight: 1.2)
+   &:nth-child(1)
+      &::after
+         background: linear-gradient(128deg, #e1e0e6, #beafd5)
+      &::before
+         content: "Nibula Silver"
+         bottom: -110%
+         opacity: 1
+   &:nth-child(2)
+      &::after
+         background: linear-gradient(128deg, #6e656f, #3c3638)
+      &::before
+         content: "Nibula Black"
+         bottom: -110%
+         opacity: 1
+
+#rkt-oppoReno12pro .left-oppoReno12pro-colors-slider-pagination .swiper-pagination-bullet-active
+   &::after
+      content: ""
+      @include position($position: absolute, $zIndex: 8)
+      display: block
+      width: 28px
+      height: 28px
+      top: -2px
+      left: -2px
+      right: -4px
+      bottom: -4px
+      border: 2px solid #b0aeae
+      border-radius: 50%
+      color: transparent
+   &::before
+      opacity: 1
+      color: #fff
+
+#rkt-oppoReno12pro .oppoReno12pro-screen
+   &__bg
+      background: linear-gradient(1.41deg,#fff 53.89%,#e2d7ef 111.08%)
+   &__inner
+      margin-bottom: 20px
+   &__text
+      padding: 15px 10px
+      p
+         margin-bottom: 10px
+         span
+            color: rgba(0, 0, 0, 0.95)
+      h2, p
+         text-align: left
+   &__image
+      @include position(relative, 7)
+      overflow: hidden
+      height: 50vw
+      img
+         transform: rotate(-90deg) translate(60%, 20%)
+         object-fit: cover
+   &__columns
+      padding: 10px
+      display: grid
+      grid-template-columns: repeat(2, 1fr)
+      gap: 5px
+   &__col
+      background: #f0f0f0
+      border-radius: 7px
+      padding: 12px 10px
+      p
+         text-align: left
+         color: rgba(0, 0, 0, 0.95)
+         @include adaptiv-value("font-size", 18, 14)
+         span
+            display: block
+            @include adaptiv-value("font-size", 20, 16)
+            font-weight: 700
+            margin-bottom: 15px
+      &:nth-child(1)
+         grid-column: span 2
+
+#rkt-oppoReno12pro .oppoReno12pro-protection
+   &__inner
+      @include adaptiv-value("border-radius", 25, 10)
+      background: #f0f0f0
+   &__image
+      img
+         @include adaptiv-value("border-top-left-radius", 25, 10)
+         @include adaptiv-value("border-top-right-radius", 25, 10)
+   &__items
+      margin: 15px 0px 15px 10px
+      padding-bottom: 15px
+      h4, p
+         text-align: left
+   &__title
+      padding: 5px 10px 20px 20px
+      transition: .5s
+      border-left: 2px solid rgba(0, 0, 0, 0.3)
+      h4
+         color: rgba(0, 0, 0, 0.3)
+         margin-bottom: 0
+      &.active
+         border-left: 2px solid #000
+         h4
+            color: #000
+   &__panel
+      padding: 0px 10px 0px 20px
+      max-height: 0
+      overflow: hidden
+      transition: max-height 0.5s ease-out
+      border-left: 2px solid #000
+      p
+         padding-bottom: 15px
+
+#rkt-oppoReno12pro .oppoReno12pro-armor
+   &__bg
+      background-color: #f0f0f0
+   &__inner
+      margin-bottom: 15px
+   &__row
+      padding: 15px 10px
+   &__header
+      p
+         span
+            color: rgba(0, 0, 0, 0.55)
+      h3
+         margin: 10px 0
+      h3, p
+         text-align: left
+   &__text
+      margin-bottom: 15px
+      p
+         text-align: left
+   &__content
+      @include position(relative, 5)
+      width: 100%
+      height: 200px
+      &::before
+         content: ""
+         @include position(absolute, -1)
+         @include bg-image(url("../img/img13.png"))
+         background-position: top left
+         top: 30px
+         right: 0
+         bottom: 0
+         left: 0
+         width: 100%
+         height: auto
+   &__content-text
+      p
+         text-align: center
+         span
+            @include adaptiv-value("font-size", 55, 20)
+            background-image: linear-gradient(320deg, #a985b3, #332940, #332940, #a985b3)
+            background-clip: text
+            color: transparent
+            font-weight: 800
+   &__columns
+      display: grid
+      grid-template-columns: 1fr
+      gap: 10px
+      padding: 15px 10px
+   &__col
+      background: hsla(0, 0%, 100%, .3)
+      border-radius: 36px
+      padding: 12px 10px
+   &__col-title
+      padding: 0 10px 15px
+      p
+         span
+            display: block
+            font-weight: 700
+            text-align: left
+   &__col-text
+      padding: 0 10px
+      p
+         text-align: left
+
+#rkt-oppoReno12pro .oppoReno12pro-detail-slider
+   &__slide
+      padding-bottom: 60px
+   &__card
+      @include bg-image(url("../img/bg14.jpg"))
+      display: flex
+      flex-direction: column-reverse
+      justify-content: flex-end
+      min-height: 455px
+      @include adaptiv-value("border-radius", 25, 10)
+   &__text
+      padding: 15px 10px
+      h3
+         margin: 10px 0
+      h3, p
+         text-align: left
+   &__image
+      img
+         @include adaptiv-value("border-radius", 25, 10)
+
+#rkt-oppoReno12pro .oppoReno12pro-cameras
+   &__bg
+      background-color: #f5f5fa
+   &__header
+      padding: 20px 10px
+      p
+         span
+            display: block
+            margin-bottom: 10px
+            color: rgba(0, 0, 0, 0.55)
+   &__images
+      @include position(relative, 5)
+      overflow: hidden
+      padding: 0 0 75%
+   &__img
+      position: absolute
+      &:nth-child(1)
+         left: 10px
+         right: 40%
+         z-index: 6
+      &:nth-child(2)
+         left: 50%
+         right: 10px
+         z-index: -1
+   &__items
+      padding: 15px 10px
+   &__item
+      border-top: 1px solid rgba(0, 0, 0, 0.55)
+      padding-top: 10px
+      p
+         margin-bottom: 10px
+         span
+            color: rgba(0, 0, 0, 0.55)
+
+#rkt-oppoReno12pro .oppoReno12pro-portrait
+   &__inner
+      padding: 15px 10px
+   &__text
+      margin-bottom: 10px
+      p
+         span
+            color: rgba(0, 0, 0, 0.55)
+   &__item
+      @include position(relative, 5)
+   &__img
+      &_01
+         img
+            border-top-left-radius: 8px
+            border-top-right-radius: 8px
+      &_02
+         img
+            border-bottom-left-radius: 8px
+            border-bottom-right-radius: 8px
+   &__item-text
+      @include position(absolute, 10)
+      right: 10px
+      bottom: 10px
+      padding: 5px 16px
+      border-radius: 9999px
+      border: 1px solid #fff
+      background-color: rgba(250, 250, 250, 0.7)
+
+#rkt-oppoReno12pro .oppoReno12pro-photos
+   &__inner
+      display: flex
+      flex-direction: column-reverse
+      margin-bottom: 10px
+      &:last-child
+         margin-bottom: 0
+   &__image
+      img
+         @include adaptiv-value("border-radius", 25, 10)
+   &__text
+      p
+         span
+            color: rgba(0, 0, 0, 0.55)
+      h2
+         text-align: left
+
+#rkt-oppoReno12pro .oppoReno12pro-memory
+   &__title
+      background: #f6f6f6
+      padding: 20px 5px
+   &__bg
+      background: #f6f6f6 url("../img/img20_1.png") no-repeat
+      background-position: 0 0
+      background-size: cover
+      @include position(relative, 5)
+      &::before
+         content: ""
+         @include bg-image(url("../img/img20_2.png"))
+         background-position: 0 0
+         @include position(absolute, 6)
+         top: -30px
+         left: 0
+         right: 0
+         bottom: 0
+         width: 100%
+   &__inner
+      padding: 20px 0
+   &__content
+      margin: 20px 15px
+      padding: 20px 0
+      @include position(relative, 8)
+      background-color: #fff
+      @include adaptiv-value("border-radius", 20, 8)
+   &__text
+      padding: 20px 10px
+      p
+         span
+            color: rgba(0, 0, 0, 0.55)
+   &__columns
+      padding: 20px 10px
+   &__col
+      background-color: #f6f6f6
+      border-radius: 8px
+      padding: 10px
+      margin-bottom: 15px
+      &:last-child
+         margin-bottom: 0
+      p
+         span
+            display: block
+            @include adaptiv-value("font-size", 20, 18)
+            font-weight: 700
+            margin-bottom: 10px
+
+#rkt-oppoReno12pro .oppoReno12pro-batery
+   &__bg
+      @include bg-image(url("../img/bg21.jpg"))
+   &__inner
+      padding: 20px 10px
+   &__items
+      background: rgba(255, 255, 255, 0.5)
+      padding: 20px 15px
+      border-radius: 10px
+   &__item
+      display: flex
+      align-items: center
+      margin-bottom: 10px
+      &:last-child
+         margin-bottom: 0
+   &__img
+      flex: 0 0 40px
+   &__text
+      flex: 1 1 auto
+      padding: 10px 0 10px 15px
+      p
+         text-align: left
+
+#rkt-oppoReno12pro .oppoReno12pro-column
+   &__inner
+      padding: 15px 10px
+   &__col
+      @include adaptiv-value("border-radius", 15, 8)
+      padding: 15px 10px
+      background: #f6f6f6
+      margin-bottom: 15px
+   &__text
+      h3, p
+         text-align: left
+      p
+         margin-bottom: 10px
+         span
+            color: rgba(0, 0, 0, 0.5)
+
+#rkt-oppoReno12pro .oppoReno12pro-colorOs
+   &__bg
+      background-color: #f0f0f0
+   &__inner
+      padding: 15px 10px
+   &__column
+      margin-bottom: 15px
+   &__img
+      img
+         border-top-left-radius: 10px
+         border-top-right-radius: 10px
+   &__text
+      background: #fff
+      padding: 15px 10px
+      border-bottom-left-radius: 10px
+      border-bottom-right-radius: 10px
+      h4, p
+         text-align: left
+
+//=================================================================================            
+#rkt-oppoReno12pro .aside
+   &__box
+      display: none
+
+//=========================================================================================================================================
+@media (min-width: $bp-mobile)
+   #rkt-oppoReno12pro .rkt-oppoReno12pro
+      &__slider
+         margin-bottom: 30px
+   #rkt-oppoReno12pro .top-oppoReno12pro
+      &__inner
+         margin-top: 0
+      &__text
+         top: 40px
+   #rkt-oppoReno12pro .oppoReno12pro-spec
+      &__items
+         display: grid
+         grid-template-columns: repeat(2, 1fr)
+         gap: 10px
+      &__item
+         margin-bottom: 0
+      &__text
+         padding: 8px 10px
+   #rkt-oppoReno12pro .oppoReno12pro-ai-slider
+      &__card
+         padding: 20px 25px
+   #rkt-oppoReno12pro .swiper-button-next
+      right: 30px
+   #rkt-oppoReno12pro .row-rkt-oppoReno12pro
+      &__inner
+         padding: 0 25px
+      &__accordion
+         margin: 0 10px 20px
+   #rkt-oppoReno12pro .oppoReno12pro-vids-slider
+      &__card
+         padding: 20px 25px 0
+   #rkt-oppoReno12pro .oppoReno12pro-3dDesign
+      &__text
+         padding: 20px 25px
+         right: 35%
+   #rkt-oppoReno12pro .oppoReno12pro-comfortDesign
+      &__inner
+         padding-bottom: 10px
+      &__item
+         padding: 20px 25px
+      &__columns
+         gap: 15px
+         margin-bottom: 45px
+      &__col
+         padding: 14px
+   #rkt-oppoReno12pro .left-oppoReno12pro-colors-slider
+      &__item
+         padding: 15px 20px
+   #rkt-oppoReno12pro .oppoReno12pro-screen
+      &__text
+         padding: 20px 25px
+      &__columns
+         padding: 10px 25px 20px
+         gap: 15px
+   #rkt-oppoReno12pro .oppoReno12pro-protection
+      &__items
+         margin: 15px 0px 15px 20px
+      &__title
+         padding: 5px 20px 20px 20px
+      &__panel
+         padding: 0px 20px
+   #rkt-oppoReno12pro .oppoReno12pro-armor
+      &__row, &__columns
+         padding: 15px 20px
+   #rkt-oppoReno12pro .oppoReno12pro-detail-slider
+      &__text
+         padding: 15px 20px
+      &__image
+         img
+            margin-left: auto
+   #rkt-oppoReno12pro .oppoReno12pro-cameras
+      &__header
+         padding: 25px 20px
+      &__img
+         &:nth-child(1)
+            left: 20px
+         &:nth-child(2)
+            right: 20px
+      &__items
+         padding: 20px
+   #rkt-oppoReno12pro .oppoReno12pro-portrait
+      &__inner
+         padding: 25px 20px
+      &__text
+         margin-bottom: 20px
+   #rkt-oppoReno12pro .oppoReno12pro-photos
+      margin-bottom: 20px
+   #rkt-oppoReno12pro .oppoReno12pro-memory
+      &__content
+         margin: 25px 20px
+         padding: 20px 10px
+   #rkt-oppoReno12pro .oppoReno12pro-batery
+      &__inner
+         padding: 20px
+      &__items
+         display: grid
+         grid-template-columns: repeat(2, 1fr)
+         gap: 15px
+      &__item
+         margin-bottom: 0
+   #rkt-oppoReno12pro .oppoReno12pro-column
+      &__col
+         padding: 15px 20px
+   #rkt-oppoReno12pro .oppoReno12pro-colorOs
+      &__inner
+         padding: 25px 20px
+      &__text
+         padding: 25px 20px
+
+@media (min-width: 650.98px)
+   #rkt-oppoReno12pro .oppoReno12pro-comfortDesign
+      &__inner
+         padding-bottom: 160px
+      &__item
+         right: 35%
+   #rkt-oppoReno12pro .oppoReno12pro-screen
+      &__image
+         img
+            transform: rotate(-90deg) translate(50%, 25%)
+   #rkt-oppoReno12pro .oppoReno12pro-armor
+      &__content
+         &::before
+            top: 50px
+
+@media (min-width: $bp-tablet)
+   #rkt-oppoReno12pro .rkt-oppoReno12pro
+      &__top
+         margin-bottom: 0
+   #rkt-oppoReno12pro .top-oppoReno12pro
+      &__inner
+         margin-top: 35px
+      &__text
+         top: 0
+   #rkt-oppoReno12pro .oppoReno12pro-spec
+      &__inner
+         padding: 25px 20px
+      &__items
+         grid-template-columns: repeat(4, 1fr)
+         gap: 10px
+   #rkt-oppoReno12pro .oppoReno12pro-ai-slider
+      &__swiper
+         width: 75%
+         margin: 0
+         overflow: visible
+         padding-left: 20px
+      &__slide
+         &:nth-child(-n+3)
+            img
+               max-height: 100%
+         &:nth-child(4)
+            img
+               max-height: 265px
+      &__card
+         flex-direction: row
+         gap: 15px
+         min-height: 360px
+      &__text
+         flex: 0 1 40%
+         p
+            span
+               color: rgba(0, 0, 0, 0.55)
+      &__items
+         flex: 0 1 60%
+         display: flex
+         justify-content: center
+         gap: 10px
+      &__item
+         margin-bottom: 0
+         img
+            margin: 0 auto
+      &__next, &__prev
+         display: none
+      &__scrollbar
+         width: 30%
+   #rkt-oppoReno12pro .row-rkt-oppoReno12pro
+      &__inner
+         display: flex
+         flex-direction: row
+         padding: 0
+         &_rev
+            flex-direction: row-reverse
+      &__item
+         flex: 0 1 50%
+         display: flex
+         flex-direction: column
+         justify-content: space-between
+         padding: 20px 20px 0px
+      &__text
+         padding: 10px 20px
+         p
+            span
+               color: rgba(0, 0, 0, 0.55)
+      &__image
+         flex: 0 1 50%
+   #rkt-oppoReno12pro .oppoReno12pro-aiOnline
+      &__image
+         position: relative
+         z-index: 5
+         padding-bottom: 58%
+         img
+            width: 100%
+            height: 100%
+            @include position(absolute, 9)
+            object-fit: cover
+            top: 0
+            left: 0
+   #rkt-oppoReno12pro .oppoReno12pro-beaconLink
+      &__inner
+         margin-bottom: 40px
+      &__image
+         img
+            width: 50%
+   #rkt-oppoReno12pro .oppoReno12pro-vids-slider
+      &__inner
+         padding: 0 40px
+      &__swiper
+         width: auto
+         margin: 0
+         overflow: visible
+         padding-left: 20px
+      &__card
+         height: 700px
+         overflow: hidden
+      &__text
+         p
+            span
+               color: rgba(0, 0, 0, 0.55)
+      &__prev
+         left: 85%
+      &__prev, &__next
+         width: 30px
+         height: 30px
+         &::after
+            width: 20px
+            height: 20px
+      &__scrollbar
+         width: 70%
+   #rkt-oppoReno12pro .oppoReno12pro-design
+      &__inner
+         margin-bottom: 40px
+      &__text
+         padding: 35px 10px
+   #rkt-oppoReno12pro .oppoReno12pro-3dDesign
+      &__inner
+         padding: 0 20px
+         margin-bottom: 40px
+      &__text
+         padding: 30px 40px
+         right: 45%
+   #rkt-oppoReno12pro .oppoReno12pro-comfortDesign
+      &__inner
+         margin: 0 20px 40px
+      &__item
+         right: 40%
+   #rkt-oppoReno12pro .oppoReno12pro-colors-slider
+      &__carousel
+         @include flex-box($justifyContent: center, $alignItems: center)
+         flex-direction: row-reverse
+         margin: 0 20px 40px
+      &__items
+         min-width: 0
+         flex: 0 1 50%
+         display: flex
+         align-items: center
+         &_images
+            align-items: start
+   #rkt-oppoReno12pro .left-oppoReno12pro-colors-slider
+      &__slide
+         padding-bottom: 10px
+   #rkt-oppoReno12pro .left-oppoReno12pro-colors-slider-pagination
+      text-align: left
+      padding: 0 25px
+      bottom: -25px
+   #rkt-oppoReno12pro .right-oppoReno12pro-colors-slider
+      &__image
+         img
+            border-top-left-radius: 0
+            @include adaptiv-value("border-bottom-right-radius", 25, 19.559)
+   #rkt-oppoReno12pro .left-oppoReno12pro-colors-slider-pagination .swiper-pagination-bullet
+      margin: 25px 35% 25px 0
+      &:nth-child(1)
+         &::before
+            left: 50px
+            bottom: 0
+      &:nth-child(2)
+         &::before
+            left: 50px
+            bottom: 0
+   #rkt-oppoReno12pro .oppoReno12pro-screen
+      &__bg
+         background: linear-gradient(.56deg, #fff 42.78%, #e2d7ef 110.92%)
+      &__text
+         padding: 25px 40px
+      &__image
+         height: auto
+         img
+            transform: rotate(0deg) translate(0, 0)
+            margin: 0 auto
+      &__columns
+         grid-template-columns: repeat(4, 1fr)
+         padding: 0 40px 20px
+      &__col
+         &:nth-child(1)
+            grid-column: span 4
+   #rkt-oppoReno12pro .oppoReno12pro-protection
+      &__inner
+         display: flex
+         align-items: center
+         border-radius: 7px
+         margin: 0 40px 40px
+      &__image
+         position: relative
+         z-index: 5
+         padding-bottom: 58%
+         flex: 0 1 50%
+         img
+            width: 100%
+            height: 100%
+            position: absolute
+            z-index: 6
+            object-fit: cover
+            top: 0
+            left: 0
+            border-top-right-radius: 0px
+            border-top-left-radius: 7px
+            border-bottom-left-radius: 7px
+      &__items
+         flex: 0 1 50%
+   #rkt-oppoReno12pro .oppoReno12pro-armor
+      &__row
+         display: flex
+      &__header
+         flex: 0 1 50%
+         padding: 10px 20px
+      &__text
+         flex: 0 1 50%
+         padding: 10px 20px
+      &__columns
+         grid-template-columns: repeat(3, 1fr)
+   #rkt-oppoReno12pro .oppoReno12pro-detail-slider
+      &__card
+         @include position(relative, 6)
+      &__text
+         @include position(absolute, 7)
+         left: 0
+         transform: translateY(-50%)
+         &_01
+            top: 50%
+            right: 55%
+         &_02
+            top: 70%
+            right: 55%
+         &_03
+            top: 77%
+            right: 50%
+      &__image
+         position: relative
+         z-index: 5
+         padding-bottom: 62%
+         img
+            width: 100%
+            height: 100%
+            position: absolute
+            z-index: 6
+            object-fit: cover
+            top: 0
+            left: 0
+   #rkt-oppoReno12pro .oppoReno12pro-cameras
+      &__body
+         @include position(relative, 5)
+      &__img
+         &:nth-child(1)
+            left: 30%
+         &:nth-child(2)
+            right: 22%
+      &__items
+         padding: 0
+      &__item
+         @include position(absolute, 6)
+         transform: translateY(-50%)
+         border-top: none
+         p
+            @include position(relative, 7)
+            b
+               &::before
+                  content: ""
+                  @include position(absolute, 8)
+                  top: -10px
+                  height: 1px
+                  background-color: rgba(0, 0, 0, 0.55)
+            span
+               display: block
+               padding-bottom: 10px
+         &_l
+            top: 31%
+            left: 20px
+            right: 70%
+            p
+               text-align: left
+               b
+                  &::before
+                     left: 0
+                     width: 135%
+         &_r
+            top: 20%
+            right: 20px
+            left: 78%
+            p
+               text-align: right
+               b
+                  &::before
+                     right: 0px
+                     width: 175%
+   #rkt-oppoReno12pro .oppoReno12pro-portrait
+      &__inner
+         padding: 20px 40px
+      &__images
+         display: flex
+      &__img
+         &_01
+            img
+               border-bottom-left-radius: 10px
+               border-top-right-radius: 0
+         &_02
+            img
+               border-bottom-left-radius: 0px
+               border-top-right-radius: 10px
+      &__item-text
+         left: 50%
+         right: auto
+         transform: translateX(-50%)
+         margin-right: -50%
+   #rkt-oppoReno12pro .oppoReno12pro-photos
+      &__inner
+         align-items: center
+         padding: 0 40px
+         flex-direction: row-reverse
+         &_rev
+            flex-direction: row
+      &__item
+         padding: 0
+   #rkt-oppoReno12pro .oppoReno12pro-memory
+      &__content
+         width: 60%
+         margin: 40% 40px 25px
+      &__text
+         h2, p
+            text-align: left
+      &__columns
+         display: grid
+         grid-template-columns: repeat(2, 1fr)
+         gap: 20px
+      &__col
+         margin-bottom: 0
+         p
+            text-align: left
+   #rkt-oppoReno12pro .oppoReno12pro-batery
+      &__inner
+         padding: 20px 40px
+      &__items
+         grid-template-columns: repeat(3, 1fr)
+   #rkt-oppoReno12pro .oppoReno12pro-column
+      &__inner
+         @include flex-box(center, stretch)
+         gap: 20px
+         padding: 40px
+      &__col
+         margin-bottom: 0
+         display: flex
+         flex-direction: column
+         justify-content: space-between
+   #rkt-oppoReno12pro .oppoReno12pro-colorOs
+      &__inner
+         padding: 25px 40px
+      &__columns
+         display: grid
+         grid-template-columns: repeat(3, 1fr)
+         gap: 20px
+      &__column
+         margin-bottom: 0
+         display: flex
+         flex-direction: column
+      &__text
+         flex: 1 1 auto
+
+@media (min-width: 991.98px)
+   #rkt-oppoReno12pro .oppoReno12pro-comfortDesign
+      &__inner
+         padding-bottom: 0px
+   #rkt-oppoReno12pro .oppoReno12pro-screen
+      &__columns
+         grid-template-columns: repeat(5, 1fr)
+      &__col
+         &:nth-child(1)
+            grid-column: span 1
+   #rkt-oppoReno12pro .oppoReno12pro-cameras
+      &__item
+         &_l
+            top: 28%
+         &_r
+            top: 15%
+
+@media (min-width: $bp-hd-desktop)
+   #rkt-oppoReno12pro .rkt-oppoReno12pro
+      &__wrapper
+         display: flex
+         justify-content: center
+      &__container
+         padding: 0
+         margin: 0
+         h2
+            font-size: 24px
+         h3
+            font-size: 20px
+         p
+            font-size: 16px
+         ul
+            li
+               font-size: 16px
+   #rkt-oppoReno12pro .top-oppoReno12pro
+      &__inner
+         margin-top: 0
+      &__text
+         top: 18px
+   #rkt-oppoReno12pro .oppoReno12pro-spec
+      &__inner
+         padding: 45px 25px
+      &__items
+         gap: 15px
+   #rkt-oppoReno12pro .oppoReno12pro-detail-slider
+      &__text
+         &_03
+            right: 60%
+   #rkt-oppoReno12pro .oppoReno12pro-cameras
+      &__item
+         &_l
+            left: 40px
+         &_r
+            right: 40px
+   #rkt-oppoReno12pro .oppoReno12pro-memory
+      &__content
+         width: 50%
+
+   #rkt-oppoReno12pro .aside
+      &__box
+         display: block
+         box-sizing: border-box
+         background-color: #9ec898
+         flex: 0 0 360px
+//===============================================================================================================
+@media screen and (min-width: 1024px) and (max-width: 1300px)
+   #rkt-oppoReno12pro .oppoReno12pro-comfortDesign
+      &__inner
+         padding-bottom: 15%
+
+@media screen and (min-width: 1024px) and (max-width: 1200px)
+   #rkt-oppoReno12pro .oppoReno12pro-spec
+      &__items
+         grid-template-columns: repeat(2, 1fr)
+      &__text
+         left: 25px
+         right: 25px
+         bottom: 35px
+         padding: 15px 12px
+   #rkt-oppoReno12pro .oppoReno12pro-ai-slider
+      &__slide
+         display: flex
+      &__card
+         flex-direction: column
+         flex: 1 1 auto
+   #rkt-oppoReno12pro .row-rkt-oppoReno12pro
+      &__inner
+         flex-direction: column
+      &__image
+         padding-bottom: 0
+         img
+            position: static
+   #rkt-oppoReno12pro .oppoReno12pro-vids-slider
+      &__card
+         height: 680px
+      &__next
+         right: 10px
+   #rkt-oppoReno12pro .oppoReno12pro-comfortDesign
+      &__inner
+         padding-bottom: 25%
+      &__item
+         right: 35%
+   #rkt-oppoReno12pro .oppoReno12pro-screen
+      &__columns
+         grid-template-columns: repeat(2, 1fr)
+      &__col
+         &:nth-child(1)
+            grid-column: span 2
+   #rkt-oppoReno12pro .oppoReno12pro-cameras
+      &__item
+         &_l
+            left: 20px
+         &_r
+            right: 20px
+   #rkt-oppoReno12pro .oppoReno12pro-photos
+      &__inner
+         flex-direction: row-reverse
+         &_rev
+            flex-direction: row
+   #rkt-oppoReno12pro .oppoReno12pro-memory
+      &__content
+         width: 70%
+   #rkt-oppoReno12pro .oppoReno12pro-column
+      &__inner
+         padding: 40px 20px
+
+@media screen and (min-width: 1024px) and (max-width: 1100px)
+   #rkt-oppoReno12pro .oppoReno12pro-detail-slider
+      &__text
+         position: static
+         transform: translateY(0)
+      &__image
+         padding-bottom: 0
+         img
+            position: static
+   #rkt-oppoReno12pro .oppoReno12pro-cameras
+      &__item
+         &_l
+            top: 31%
+         &_r
+            top: 18%
+   #rkt-oppoReno12pro .oppoReno12pro-comfortDesign
+      &__col
+         padding: 10px
